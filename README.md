@@ -1,1 +1,1 @@
-# DataVisProj
+Final project for CS6630, Visualization for Data Science.
