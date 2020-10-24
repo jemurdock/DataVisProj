@@ -33,3 +33,5 @@ https://www.statista.com/statistics/237070/frequency-of-reading-e-books-on-an-eb
 https://www.statista.com/statistics/222737/book-reading-trends-by-number-of-read-books/
 
 https://www.kaggle.com/vipulgote4/reading-habit-dataset?select=BigML_Dataset_5f50a62795a9306aa200003e.csv
+
+https://www.kaggle.com/imls/public-libraries
