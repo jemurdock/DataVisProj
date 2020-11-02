@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://d3js.org/d3.v5.js"></script>
+        <script src="https://d3js.org/d3-array.v2.min.js"></script>
+        <script src="https://d3js.org/d3-force.v2.min.js"></script>
+        <link rel="stylesheet" href="styles.css" />
+        <h1>The Influence of the Digital Age on the Book Market</h1>
+        <h4>created by Michael Gardone and Jessica Murdock</h4>
+    </head>
+    <body>
+        <div id="chonkytable">
+            <svg id="tabsvg">
+                <g transform="translate(5,5)" id="table">
+                    <rect width='895' height='895' fill='darkred'></rect>
+                </g>
+                <g transform="translate(910,5)" id="pies">
+                    <rect width='1090' height='895' fill='palevioletred'></rect>
+                </g>
+            </svg>
+        </div>
+        <div id="booksales">
+            <svg id="boosvg">
+                <g transform="translate(5,5)" id="bsales">
+                    <rect width='975' height='695' fill='orange'></rect>
+                </g>
+                <g transform="translate(990,5)" id="numstores">
+                    <rect width='1100' height='695' fill='gold'></rect>
+                </g>
+            </svg>
+        </div>
+        <div id="publishing">
+            <svg id="pubsvg">
+                <g transform="translate(5,5)" id="pub">
+                    <rect width='975' height='695' fill='darkolivegreen'></rect>
+                </g>
+                <g transform="translate(990,5)" id="pubstory">
+                    <rect width='1100' height='695' fill='lightskyblue'></rect>
+                </g>
+            </svg>
+        </div>
+        <div id="libraries">
+            <svg id="libsvg">
+                <g transform="translate(5,5)" id="libstory">
+                    <rect width='805' height='795' fill='steelblue'></rect>
+                </g>
+                <g transform="translate(820,5)" id="libmap">
+                    <rect width='1180' height='795' fill='indigo'></rect>
+                </g>
+            </svg>
+        </div>
+        <div id="closing">
+            <svg id="closvg">
+                <g transform="translate(5,5)" id="close">
+                    <rect width='1995' height='395' fill='grey'></rect>
+                </g>
+            </svg>
+        </div>
+        <script src="js/booksaleschart.js"></script>
+        <script src="js/librarieschart.js"></script>
+        <script src="js/piechart.js"></script>
+        <script src="js/publishingchart.js"></script>
+        <script src="js/storeschart.js"></script>
+        <script src="js/table.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

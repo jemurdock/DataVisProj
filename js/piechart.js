@@ -1,0 +1,6 @@
+class PieChart{
+
+    constructor(){
+        
+    }
+}
