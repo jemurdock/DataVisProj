@@ -3,6 +3,14 @@ div{
     height: 100%;
 }
 
+h1{
+    text-align:center;
+}
+
+h3{
+    text-align:center;
+}
+
 svg{
     width: 2000px;
     padding: 5px;
@@ -27,4 +35,9 @@ svg{
 
 #closvg{
     height: 400px;
+}
+
+#links{
+    font-size: 24px;
+    margin-left: 85px;
 }
