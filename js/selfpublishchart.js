@@ -1,13 +1,13 @@
-class PublishingChart{
+class SelfPublishChart{
 
     constructor(data){
         this.data = data;
     }
 
     drawChart(){
-        let g = d3.select("#pub");
+        let g = d3.select("#pubstory");
         g.append("text").attr("class", "graphtitle").attr("x", 220).attr("y", 50)
-            .text("Publishing Industry Revenue")
+            .text("Number of Self-Published Books Through Different Platforms")
 
         let xScale = d3.scaleLinear().domain([2010,2018]).range([60,1030]);
         let xAxis = d3.axisBottom(xScale).ticks(9).tickFormat(function(d){
@@ -26,7 +26,7 @@ class PublishingChart{
         let y = g.append("g").attr("class", "axis").attr("transform", "translate(75,50)").call(yAxis);
         y.append("text").attr("class", "axislabel")
             .attr("transform", "translate(-50,170) rotate(270)")
-            .text("Revenue (In Millions)");
+            .text("Books Published (In Millions)");
 
     }
 }

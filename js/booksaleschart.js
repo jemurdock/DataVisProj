@@ -6,9 +6,9 @@ class BookSalesChart{
 
     drawChart(){
         let g = d3.select("#bsales");
+        //Add title and axes
         g.append("text").attr("class", "graphtitle").attr("x", 300).attr("y", 50)
             .text("Yearly Book Sales in Stores & Through E-Commerce")
-
         let xScale = d3.scaleLinear().domain([1992,2018]).range([60,1030]);
         let xAxis = d3.axisBottom(xScale).ticks(13).tickFormat(function(d){
             return d;
@@ -27,5 +27,8 @@ class BookSalesChart{
         y.append("text").attr("class", "axislabel")
             .attr("transform", "translate(-50,170) rotate(270)")
             .text("Book Sales (In Millions of Dollars)");
+
+        //Add data points
+        g.selectAll("line").data(this.data);
     }
 }
