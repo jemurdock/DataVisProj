@@ -27,11 +27,11 @@ svg{
 }
 
 #boosvg{
-    height: 1100px;
+    height: 1150px;
 }
 
 #pubsvg{
-    height: 700px;
+    height: 800px;
 }
 
 #libsvg{
@@ -45,4 +45,23 @@ svg{
 #links{
     font-size: 24px;
     margin-left: 85px;
+}
+
+.axis{
+    color: white;
+    font-size: 20px;
+}
+
+.axislabel{
+    color:white;
+    fill: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.graphtitle{
+    color:white;
+    fill:white;
+    font-size: 26px;
+    font-weight: bold;
 }
