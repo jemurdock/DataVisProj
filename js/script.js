@@ -1,5 +1,22 @@
-//1: Data wrangling and read-in
 
-//2: Set up data structures
+let booksales;
+let pubsales;
+let numstores;
 
-//3: Draw charts
+d3.csv('./cleanData/BookSales.csv').then(function(data){
+    console.log(data);
+    booksales = new BookSalesChart(data);
+    booksales.drawChart();
+});
+
+d3.csv('./cleanData/IndPub.csv').then(function(data){
+    console.log(data);
+    pubsales = new PublishingChart(data);
+    pubsales.drawChart();
+});
+
+d3.csv('./cleanData/BookStores.csv').then(function(data){
+    console.log(data);
+    numstores = new StoresChart(data);
+    numstores.drawChart();
+});

@@ -1,6 +1,10 @@
 class BookSalesChart{
 
-    constructor(){
-        
+    constructor(data){
+        this.data = data;
+    }
+
+    drawChart(){
+
     }
 }

@@ -1,6 +1,10 @@
 class StoresChart{
 
-    constructor(){
-        
+    constructor(data){
+        this.data = data;
+    }
+
+    drawChart(){
+
     }
 }

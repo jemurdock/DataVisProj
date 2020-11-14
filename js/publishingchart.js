@@ -1,6 +1,10 @@
 class PublishingChart{
 
-    constructor(){
-        
+    constructor(data){
+        this.data = data;
+    }
+
+    drawChart(){
+
     }
 }
