@@ -25,8 +25,6 @@ class Table {
             .data(["age", "sex", "avg", "pnt", "aud", "ebk"]).enter()
             .append("td").attr("id", function(d) { return d });
 
-        console.log(this.tbody.selectAll("#age"));
-
         this.tbody.selectAll("#age").data(this.data).append("p").text(function(d) { return d["age"]; });
         this.tbody.selectAll("#sex").data(this.data).append("p").text(function(d) { return d["sex"]; });
         this.tbody.selectAll("#avg").data(this.data).append("p").text(function(d) { return d["avg"]; });

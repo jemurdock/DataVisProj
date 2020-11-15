@@ -63,24 +63,26 @@ svg {
     font-weight: bold;
 }
 
-line.bookstores, path.bookstores {
+line.bookstores,
+path.bookstores {
     fill: none;
     stroke: royalblue;
     stroke-width: 2px;
 }
 
-circle.bookstores{
+circle.bookstores {
     fill: royalblue;
     stroke: white;
 }
 
-line.ecommerce, path.ecommerce {
+line.ecommerce,
+path.ecommerce {
     fill: none;
     stroke: greenyellow;
     stroke-width: 2px;
 }
 
-circle.ecommerce{
+circle.ecommerce {
     fill: greenyellow;
     stroke: white;
 }
@@ -91,35 +93,47 @@ circle.ecommerce{
     stroke: palegoldenrod;
 }
 
-line.xlibris, path.xlibris, line.indcom, path.indcom {
+line.xlibris,
+path.xlibris,
+line.indcom,
+path.indcom {
     fill: none;
     stroke: palevioletred;
     stroke-width: 2px;
 }
 
-line.blurb, path.blurb, line.indloc, path.indloc {
+line.blurb,
+path.blurb,
+line.indloc,
+path.indloc {
     fill: none;
     stroke: lightseagreen;
     stroke-width: 2px;
 }
 
-line.createspace, path.createspace, line.bn, path.bn {
+line.createspace,
+path.createspace,
+line.bn,
+path.bn {
     fill: none;
     stroke: slateblue;
     stroke-width: 2px;
 }
 
-circle.xlibris, circle.indcom {
+circle.xlibris,
+circle.indcom {
     fill: palevioletred;
     stroke: white;
 }
 
-circle.blurb, circle.indloc {
+circle.blurb,
+circle.indloc {
     fill: lightseagreen;
     stroke: white;
 }
 
-circle.createspace, circle.bn {
+circle.createspace,
+circle.bn {
     fill: slateblue;
     stroke: white;
 }
@@ -144,4 +158,17 @@ circle.createspace, circle.bn {
     margin: 0;
     padding: 0;
     overflow: hidden;
+}
+
+.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 60px;
+    height: 28px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
 }
