@@ -65,3 +65,21 @@ svg{
     font-size: 26px;
     font-weight: bold;
 }
+
+.bookstores{
+    fill: none;
+    stroke: royalblue;
+    stroke-width: 2px;
+}
+
+.ecommerce{
+    fill: none;
+    stroke: greenyellow;
+    stroke-width: 2px;
+}
+
+.legend{
+    font-size: 26px;
+    fill: palegoldenrod;
+    stroke: palegoldenrod;
+}

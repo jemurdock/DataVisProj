@@ -5,7 +5,7 @@ class SelfPublishChart{
     }
 
     drawChart(){
-        let g = d3.select("#pubstory");
+        let g = d3.select("#pub");
         g.append("text").attr("class", "graphtitle").attr("x", 220).attr("y", 50)
             .text("Number of Self-Published Books Through Different Platforms")
 

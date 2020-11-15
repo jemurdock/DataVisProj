@@ -10,11 +10,11 @@ d3.csv('./cleanData/BookSales.csv').then(function(data){
     booksales.drawChart();
 });
 
-d3.csv('./cleanData/PublisherInformation.xlsx').then(function(data){
-    console.log(data);
-    pubsales = new PublishingChart(data);
-    pubsales.drawChart();
-});
+// d3.csv('./cleanData/PublisherInformation.xlsx').then(function(data){
+//     console.log(data);
+//     pubsales = new PublishingChart(data);
+//     pubsales.drawChart();
+// });
 
 d3.csv('./cleanData/IndPub.csv').then(function(data){
     console.log(data);

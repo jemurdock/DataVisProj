@@ -16,10 +16,10 @@ class BookSalesChart{
         let x = g.append("g").attr("class", "axis").attr("transform", "translate(15,680)").call(xAxis);
         x.append("text").attr("class", "axislabel").attr("x", 525).attr("y", 55).text("Year");
 
-        let yScale = d3.scaleLinear().domain([0,18.5]).range([630,5]);
+        let yScale = d3.scaleLinear().domain([0,18500]).range([630,5]);
         let yAxis = d3.axisLeft(yScale).tickFormat(function(d){
             if(d != "0")
-                return d;
+                return d/1000;
             else
                 return "";
         });
@@ -28,7 +28,21 @@ class BookSalesChart{
             .attr("transform", "translate(-50,170) rotate(270)")
             .text("Book Sales (In Millions of Dollars)");
 
-        //Add data points
-        g.selectAll("line").data(this.data);
+        let lineGenerator = d3.line()
+            .x(d => xScale(d.year)+15)
+            .y(d => yScale(d.sales)+50);
+        let blineChart = g.append("path").attr("class", "bookstores")
+            .attr("d", lineGenerator(this.data.filter(d => d.type === "bookstores")));
+        let elineChart = g.append("path").attr("class", "ecommerce")
+            .attr("d", lineGenerator(this.data.filter(d => d.type === "ecommerce")));
+
+        g.append("line").attr('x1', 790).attr('x2', 840).attr('y1', 550).attr('y2', 550)
+            .attr('class', 'bookstores');
+        g.append("text").attr('x', 845).attr('y',560).text("Physical Bookstores")
+            .attr("class", "legend");
+        g.append("line").attr('x1', 790).attr('x2', 840).attr('y1', 600).attr('y2', 600)
+            .attr('class', 'ecommerce');
+        g.append("text").attr('x', 845).attr('y',608).text("E-Commerce")
+            .attr("class", "legend");
     }
 }
