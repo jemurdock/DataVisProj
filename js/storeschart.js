@@ -17,11 +17,8 @@ class StoresChart{
         x.append("text").attr("class", "axislabel").attr("x", 525).attr("y", 55).text("Year");
 
         let yScale = d3.scaleLinear().domain([0,2600]).range([670,5]);
-        let yAxis = d3.axisLeft(yScale).tickFormat(function(d,i){
-            if(d != 0)
-                return d;          
-            else
-                return "";
+        let yAxis = d3.axisLeft(yScale).tickFormat(function(d){
+            return d;
         });
         let y = g.append("g").attr("class", "axis").attr("transform", "translate(85,50)").call(yAxis);
         y.append("text").attr("class", "axislabel")
