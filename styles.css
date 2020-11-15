@@ -92,12 +92,30 @@ svg{
 
 .blurb{
     fill: none;
-    stroke: slateblue;
+    stroke: lightseagreen;
     stroke-width: 2px;
 }
 
 .createspace{
     fill: none;
+    stroke: slateblue;
+    stroke-width: 2px;
+}
+
+.indcom{
+    fill: none;
+    stroke: palevioletred;
+    stroke-width: 2px;
+}
+
+.indloc{
+    fill: none;
     stroke: lightseagreen;
+    stroke-width: 2px;
+}
+
+.bn{
+    fill: none;
+    stroke: slateblue;
     stroke-width: 2px;
 }
