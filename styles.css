@@ -23,7 +23,7 @@ svg {
 
 #boosvg {
     background-color: rgb(61, 61, 61);
-    height: 1200px;
+    height: 1100px;
 }
 
 #pubsvg {
@@ -144,4 +144,17 @@ circle.createspace, circle.bn {
     margin: 0;
     padding: 0;
     overflow: hidden;
+}
+
+#yeartitle{
+    fill: white;
+    stroke: white;
+    font-size: 46px;
+    font-weight: bold;
+}
+
+#yearinfobox{
+    fill:white;
+    stroke: white;
+    font-size: 28px;
 }
