@@ -1,103 +1,132 @@
-html{
-    background-color:rgb(61, 61, 61);
+html {
+    background-color: rgb(61, 61, 61);
     color: white;
 }
 
-h1{
-    text-align:center;
+h1 {
+    text-align: center;
 }
 
-h3{
-    text-align:center;
+h3 {
+    text-align: center;
 }
 
-div{
+div {
     width: 100%;
     height: 100%;
 }
 
-svg{
+svg {
     width: 2000px;
     padding: 5px;
     display: inline-block;
 }
 
-#tabsvg{
+#tabsvg {
     height: 900px;
 }
 
-#boosvg{
+#boosvg {
     height: 1200px;
 }
 
-#pubsvg{
+#pubsvg {
     height: 800px;
 }
 
-#libsvg{
+#libsvg {
     height: 800px;
 }
 
-#closvg{
+#closvg {
     height: 400px;
 }
 
-#links{
+#links {
     font-size: 24px;
     margin-left: 85px;
 }
 
-.axis{
+.axis {
     color: white;
     font-size: 20px;
 }
 
-.axislabel{
-    color:white;
+.axislabel {
+    color: white;
     fill: white;
     font-size: 22px;
     font-weight: bold;
 }
 
-.graphtitle{
-    color:white;
-    fill:white;
+.graphtitle {
+    color: white;
+    fill: white;
     font-size: 26px;
     font-weight: bold;
 }
 
-.bookstores{
+.bookstores {
     fill: none;
     stroke: royalblue;
     stroke-width: 2px;
 }
 
-.ecommerce{
+.ecommerce {
     fill: none;
     stroke: greenyellow;
     stroke-width: 2px;
 }
 
-.legend{
+.legend {
     font-size: 24px;
     fill: palegoldenrod;
     stroke: palegoldenrod;
 }
 
-.xlibris{
+.xlibris {
     fill: none;
     stroke: palevioletred;
     stroke-width: 2px;
 }
 
-.blurb{
+.blurb {
     fill: none;
     stroke: slateblue;
     stroke-width: 2px;
 }
 
-.createspace{
+.createspace {
     fill: none;
     stroke: lightseagreen;
     stroke-width: 2px;
+}
+
+.pubExpense {
+    fill: none;
+    stroke: rgb(#eb3b5a);
+    stroke-width: 2px;
+}
+
+.pubExpenses {
+    fill: none;
+    stroke: rgb(#20bf6b);
+    stroke-width: 2px;
+}
+
+.navbar.center .navbar-inner {
+    text-align: center;
+}
+
+.navbar.center .navbar-inner .nav {
+    display: inline-block;
+    float: none;
+}
+
+.wider {
+    width: 895px;
+}
+
+.wider td {
+    vertical-align: center;
 }

@@ -1,4 +1,4 @@
-age, sex, race, education, employment, income, avebooks, readprint, readaudio, readebook, borrowed, lib, bought, other, news, mags, total
+age,sex,race,education,employment,income,avebooks,readprint,readaudio,readebook,borrowed,lib, bought, other, news, mags, total
 16 to 26,Female,White,High school incomplete,Employed part-time,$10k to under $20k,45,1,0,0,0,0,1,0,1,1,1
 16 to 26,Male,White,High school incomplete,Employed part-time,$10k to under $20k,16,2,0,1,1,0,1,0,2,0,2
 16 to 26,Female,White,High school incomplete,Employed part-time,$20k to under $30k,3,1,0,0,0,1,0,0,0,0,1
