@@ -54,20 +54,31 @@
                     <label class="custom-control-label" for="Male-Female">Gender Comparison</label>
                 </div>
                 <div class="custom-control custom-radio">
-                    <input type="radio" id="Age" name="customRadio" class="custom-control-input">
+                    <input type="radio" id="Age" name="customRadio" class="custom-control-input" disabled>
                     <label class="custom-control-label" for="Age" disabled>Age Comparison</label>
                 </div>
                 <div class="custom-control custom-radio">
-                    <input type="radio" id="Male-Age" name="customRadio" class="custom-control-input">
+                    <input type="radio" id="Male-Age" name="customRadio" class="custom-control-input" disabled>
                     <label class="custom-control-label" for="Male-Age">Male-Age Comparison</label>
                 </div>
                 <div class="custom-control custom-radio">
-                    <input type="radio" id="Female-Age" name="customRadio" class="custom-control-input">
+                    <input type="radio" id="Female-Age" name="customRadio" class="custom-control-input" disabled>
                     <label class="custom-control-label" for="Female-Age">Female-Age Comparison</label>
                 </div>
                 <div class="custom-control custom-radio">
-                    <input type="radio" id="Overall" name="customRadio" class="custom-control-input">
+                    <input type="radio" id="Overall" name="customRadio" class="custom-control-input" disabled>
                     <label class="custom-control-label" for="Overall">Overall Book Comparison</label>
+                </div>
+                <div>
+                    <br>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="torus" name="display" class="custom-control-input" checked onclick="displayTorus()">
+                        <label class="custom-control-label" for="torus">Torus</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="bar" name="display" class="custom-control-input" onclick="displayBar()">
+                        <label class="custom-control-label" for="bar">Bar</label>
+                    </div>
                 </div>
                 <svg id="tabsvg">
                     </svg>

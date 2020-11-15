@@ -28,6 +28,36 @@ class PieChart {
         this.genderAudio = { "male": 0, "female": 0 };
         this.genderEbook = { "male": 0, "female": 0 };
 
+        this.ageTotals = {
+            "16 to 26": 0,
+            "27 to 37": 0,
+            "38 to 48": 0,
+            "60 to 70": 0,
+            "71 to 93": 0
+        }
+        this.agePrint = {
+            "16 to 26": 0,
+            "27 to 37": 0,
+            "38 to 48": 0,
+            "60 to 70": 0,
+            "71 to 93": 0
+        }
+        this.ageAudio = {
+            "16 to 26": 0,
+            "27 to 37": 0,
+            "38 to 48": 0,
+            "60 to 70": 0,
+            "71 to 93": 0
+        }
+        this.ageEbook = {
+            "16 to 26": 0,
+            "27 to 37": 0,
+            "38 to 48": 0,
+            "60 to 70": 0,
+            "71 to 93": 0
+        }
+
+
         this.bookSpread = { "print": 0, "audio": 0, "ebook": 0 };
 
         for (let d of data) {
@@ -42,6 +72,15 @@ class PieChart {
                 this.genderAudio["female"] += +d["readaudio"];
                 this.genderEbook["female"] += +d["readebook"];
             }
+
+            this.ageTotals[d["age"]] += +d["avebooks"];
+            this.agePrint[d["age"]] += +d["readprint"];
+            this.ageAudio[d["age"]] += +d["readaudio"];
+            this.ageEbook[d["age"]] += +d["readebook"];
+
+            this.bookSpread["print"] += +d["readprint"];
+            this.bookSpread["audio"] += +d["readaudio"];
+            this.bookSpread["ebook"] += +d["readebook"];
         }
 
         this.svg = d3.select("#tabsvg");
@@ -50,9 +89,13 @@ class PieChart {
             .append("div").attr("class", "custom-control").attr("class", "custom-radio");
         div.append("input").attr("type", "radio").attr("id", "Male-Female").attr("name", "Selectors").attr("class", "custom-control-input");
         div.append("label").attr("class", "custom-control-label").attr("for", "Male-Female");
+
+        // This just puts everything in the right spots
+        this.buildTorus();
+        this.buildBars();
     }
 
-    drawTorus() {
+    buildTorus() {
         let that = this;
         let torusMath = d3.pie().value(function(d) {
             return d.value;
@@ -73,7 +116,7 @@ class PieChart {
             })
             .attr("stroke", "black")
             .style("stroke-width", "2px")
-            .style("opacity", 0.7);
+            .style("opacity", 1);
 
         this.mainView.append("text").text("Owned Books").attr("transform", "translate(-75,10)").style("fill", "black").style("font-weight", "bold").style("font-size", "24px");
         this.mainView.append("text").text("Male").attr("transform", "translate(-265,0)").style("fill", "#45aaf2").style("font-weight", "bold").style("font-size", "24px");
@@ -88,7 +131,7 @@ class PieChart {
             })
             .attr("stroke", "black")
             .style("stroke-width", "2px")
-            .style("opacity", 0.7);
+            .style("opacity", 1);
 
         this.printView.append("text").text("Print Books").attr("transform", "translate(-55,10)").style("fill", "black").style("font-weight", "bold").style("font-size", "20px");
 
@@ -101,7 +144,7 @@ class PieChart {
             })
             .attr("stroke", "black")
             .style("stroke-width", "2px")
-            .style("opacity", 0.7);
+            .style("opacity", 1);
 
         this.audioView.append("text").text("Audio Books").attr("transform", "translate(-60,10)").style("fill", "black").style("font-weight", "bold").style("font-size", "20px");
 
@@ -114,8 +157,20 @@ class PieChart {
             })
             .attr("stroke", "black")
             .style("stroke-width", "2px")
-            .style("opacity", 0.7);
+            .style("opacity", 1);
 
         this.ebookView.append("text").text("E-Books").attr("transform", "translate(-40,10)").style("fill", "black").style("font-weight", "bold").style("font-size", "20px");
+    }
+
+    buildBars() {
+
+    }
+
+    drawTorus() {
+
+    }
+
+    drawBars() {
+
     }
 }
