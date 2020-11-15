@@ -9,25 +9,25 @@ class SelfPublishChart{
         g.append("text").attr("class", "graphtitle").attr("x", 220).attr("y", 50)
             .text("Number of Self-Published Books Through Different Platforms")
 
-        let xScale = d3.scaleLinear().domain([2010,2018]).range([60,1030]);
+        let xScale = d3.scaleLinear().domain([2010,2018]).range([70,1040]); //CHANGED
         let xAxis = d3.axisBottom(xScale).ticks(9).tickFormat(function(d){
             return d;
         });
-        let x = g.append("g").attr("class", "axis").attr("transform", "translate(15,680)").call(xAxis);
+        let x = g.append("g").attr("class", "axis").attr("transform", "translate(15,720)").call(xAxis);
         x.append("text").attr("class", "axislabel").attr("x", 525).attr("y", 55).text("Year");
 
-        //let yScale = d3.scaleLog().domain([1,1416384]).range([630,5]);
-        let yScale = d3.scaleLog().range([630,5]);
-        yScale.domain([1,1416384]).nice();
+        let yScale = d3.scaleLog().domain([1,1416384]).range([680,5]);
+        //let yScale = d3.scaleLog().range([680,5]);
+        //yScale.domain([1,1416384]).nice();
         let yAxis = d3.axisLeft(yScale).tickFormat(function(d,i){
             if(d > 1 && i%3 == 0)
                 return (d/10000).toFixed(1);             
             else
                 return "";
         });
-        let y = g.append("g").attr("class", "axis").attr("transform", "translate(75,50)").call(yAxis);
+        let y = g.append("g").attr("class", "axis").attr("transform", "translate(85,50)").call(yAxis); //CHANGED
         y.append("text").attr("class", "axislabel")
-            .attr("transform", "translate(-50,120) rotate(270)")
+            .attr("transform", "translate(-60,120) rotate(270)") //CHANGED
             .text("Books Published (In Tens of Thousands)");
 
         let lineGenerator = d3.line()
