@@ -9,7 +9,7 @@ class SelfPublishChart{
         g.append("text").attr("class", "graphtitle").attr("x", 220).attr("y", 50)
             .text("Number of Self-Published Books Through Different Platforms")
 
-        let xScale = d3.scaleLinear().domain([2010,2018]).range([70,1040]); //CHANGED
+        let xScale = d3.scaleLinear().domain([2010,2018]).range([70,1040]);
         let xAxis = d3.axisBottom(xScale).ticks(9).tickFormat(function(d){
             return d;
         });
@@ -17,17 +17,15 @@ class SelfPublishChart{
         x.append("text").attr("class", "axislabel").attr("x", 525).attr("y", 55).text("Year");
 
         let yScale = d3.scaleLog().domain([1,1416384]).range([680,5]);
-        //let yScale = d3.scaleLog().range([680,5]);
-        //yScale.domain([1,1416384]).nice();
         let yAxis = d3.axisLeft(yScale).tickFormat(function(d,i){
             if(d > 1 && i%3 == 0)
                 return (d/10000).toFixed(1);             
             else
                 return "";
         });
-        let y = g.append("g").attr("class", "axis").attr("transform", "translate(85,50)").call(yAxis); //CHANGED
+        let y = g.append("g").attr("class", "axis").attr("transform", "translate(85,50)").call(yAxis);
         y.append("text").attr("class", "axislabel")
-            .attr("transform", "translate(-60,120) rotate(270)") //CHANGED
+            .attr("transform", "translate(-60,120) rotate(270)")
             .text("Books Published (In Tens of Thousands)");
 
         let lineGenerator = d3.line()
@@ -40,19 +38,19 @@ class SelfPublishChart{
         let clineChart = g.append("path").attr("class", "createspace")
             .attr("d", lineGenerator(this.data.filter(d => d.publisher === "CREATESPACE")));
 
-        g.append("line").attr('x1', 750).attr('x2', 800).attr('y1', 500).attr('y2', 500)
+        g.append("line").attr('x1', 650).attr('x2', 700).attr('y1', 500).attr('y2', 500)
             .attr('class', 'xlibris');
-        g.append("text").attr('x', 805).attr('y',510).text("Published using Xlibris")
+        g.append("text").attr('x', 705).attr('y',510).text("Published using Xlibris")
             .attr("class", "legend");
             
-        g.append("line").attr('x1', 750).attr('x2', 800).attr('y1', 550).attr('y2', 550)
+        g.append("line").attr('x1', 650).attr('x2', 700).attr('y1', 550).attr('y2', 550)
             .attr('class', 'blurb');
-        g.append("text").attr('x', 805).attr('y',560).text("Published using Blurb")
+        g.append("text").attr('x', 705).attr('y',560).text("Published using Blurb")
             .attr("class", "legend");
 
-        g.append("line").attr('x1', 750).attr('x2', 800).attr('y1', 600).attr('y2', 600)
+        g.append("line").attr('x1', 650).attr('x2', 700).attr('y1', 600).attr('y2', 600)
             .attr('class', 'createspace');
-        g.append("text").attr('x', 805).attr('y',608).text("Published using Createspace")
+        g.append("text").attr('x', 705).attr('y',608).text("Published using Createspace")
             .attr("class", "legend");
     }
 }
