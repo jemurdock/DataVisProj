@@ -79,7 +79,25 @@ svg{
 }
 
 .legend{
-    font-size: 26px;
+    font-size: 24px;
     fill: palegoldenrod;
     stroke: palegoldenrod;
+}
+
+.xlibris{
+    fill: none;
+    stroke: palevioletred;
+    stroke-width: 2px;
+}
+
+.blurb{
+    fill: none;
+    stroke: slateblue;
+    stroke-width: 2px;
+}
+
+.createspace{
+    fill: none;
+    stroke: lightseagreen;
+    stroke-width: 2px;
 }
