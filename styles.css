@@ -102,51 +102,42 @@ svg {
     stroke-width: 2px;
 }
 
-.indcom{
+.indcom {
     fill: none;
     stroke: palevioletred;
     stroke-width: 2px;
 }
 
-.indloc{
+.indloc {
     fill: none;
     stroke: lightseagreen;
     stroke-width: 2px;
 }
 
-<<<<<<< HEAD
-.pubExpense {
-    fill: none;
-    stroke: rgb(#eb3b5a);
-    stroke-width: 2px;
-}
-
-.pubExpenses {
-    fill: none;
-    stroke: rgb(#20bf6b);
-    stroke-width: 2px;
-}
-
-.navbar.center .navbar-inner {
-    text-align: center;
-}
-
-.navbar.center .navbar-inner .nav {
-    display: inline-block;
-    float: none;
-}
-
-.wider {
-    width: 895px;
-}
-
-.wider td {
-    vertical-align: center;
-}
-=======
-.bn{
+.bn {
     fill: none;
     stroke: slateblue;
     stroke-width: 2px;
 }
->>>>>>> 845533fd665830fe2084a171d879a5d142669b9a
+
+.wider {
+    width: 750px;
+}
+
+#organizer {
+    display: inline-block;
+    width: 895px;
+}
+
+#align-top {
+    vertical-align: top;
+}
+
+#control {
+    list-style: none;
+    width: 450px;
+    height: 90px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}

@@ -30,6 +30,6 @@ d3.csv('./cleanData/ReadersByCategory.csv').then(function(data) {
     readers = new Table(data);
     readers.buildTable();
 
-    torusoverview = new Table(data);
-    readers.drawChart();
+    torusoverview = new PieChart(data);
+    torusoverview.drawTorus();
 });
