@@ -92,16 +92,29 @@ svg {
 
 .blurb {
     fill: none;
-    stroke: slateblue;
+    stroke: lightseagreen;
     stroke-width: 2px;
 }
 
 .createspace {
     fill: none;
+    stroke: slateblue;
+    stroke-width: 2px;
+}
+
+.indcom{
+    fill: none;
+    stroke: palevioletred;
+    stroke-width: 2px;
+}
+
+.indloc{
+    fill: none;
     stroke: lightseagreen;
     stroke-width: 2px;
 }
 
+<<<<<<< HEAD
 .pubExpense {
     fill: none;
     stroke: rgb(#eb3b5a);
@@ -130,3 +143,10 @@ svg {
 .wider td {
     vertical-align: center;
 }
+=======
+.bn{
+    fill: none;
+    stroke: slateblue;
+    stroke-width: 2px;
+}
+>>>>>>> 845533fd665830fe2084a171d879a5d142669b9a
