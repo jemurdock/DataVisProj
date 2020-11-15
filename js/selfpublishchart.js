@@ -71,6 +71,8 @@ class SelfPublishChart {
         d3.select("#xlibris"+d.year).transition().duration(500).attr('r', 20).attr('stroke-width', '3px');
         d3.select("#blurb"+d.year).transition().duration(500).attr('r', 20).attr('stroke-width', '3px');
         d3.select("#createspace"+d.year).transition().duration(500).attr('r', 20).attr('stroke-width', '3px');
+        d3.select("#yeartitle").text(d.year);
+        d3.select("#yearinfobox").text(infobox.filter(da=>da.year === d.year)[0].script);
     }
 
     deselectValue(d){

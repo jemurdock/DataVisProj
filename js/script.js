@@ -4,6 +4,11 @@ let selfpub;
 let numstores;
 let readers;
 let torusoverview;
+var infobox = [];
+
+d3.csv('./cleanData/YearInfo.csv').then(function(data) {
+    infobox = data;
+});
 
 d3.csv('./cleanData/BookSales.csv').then(function(data) {
     booksales = new BookSalesChart(data);

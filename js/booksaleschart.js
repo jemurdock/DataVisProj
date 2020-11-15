@@ -12,10 +12,10 @@ class BookSalesChart{
         let xAxis = d3.axisBottom(xScale).ticks(13).tickFormat(function(d){
             return d;
         });
-        let x = g.append("g").attr("class", "axis").attr("transform", "translate(15,720)").call(xAxis);
+        let x = g.append("g").attr("class", "axis").attr("transform", "translate(15,620)").call(xAxis);
         x.append("text").attr("class", "axislabel").attr("x", 525).attr("y", 55).text("Year");
 
-        let yScale = d3.scaleLinear().domain([0,18500]).range([680,5]);
+        let yScale = d3.scaleLinear().domain([0,18500]).range([570,5]);
         let yAxis = d3.axisLeft(yScale).tickFormat(function(d){
             if(d != "0")
                 return d/1000;
@@ -43,13 +43,13 @@ class BookSalesChart{
             .on('mouseover', this.highlightValue)
             .on('mouseout', this.deselectValue);
 
-        g.append("line").attr('x1', 790).attr('x2', 840).attr('y1', 550).attr('y2', 550)
+        g.append("line").attr('x1', 790).attr('x2', 840).attr('y1', 450).attr('y2', 450)
             .attr('class', 'bookstores');
-        g.append("text").attr('x', 845).attr('y',560).text("Physical Bookstores")
+        g.append("text").attr('x', 845).attr('y',460).text("Physical Bookstores")
             .attr("class", "legend");
-        g.append("line").attr('x1', 790).attr('x2', 840).attr('y1', 600).attr('y2', 600)
+        g.append("line").attr('x1', 790).attr('x2', 840).attr('y1', 500).attr('y2', 500)
             .attr('class', 'ecommerce');
-        g.append("text").attr('x', 845).attr('y',608).text("E-Commerce")
+        g.append("text").attr('x', 845).attr('y',508).text("E-Commerce")
             .attr("class", "legend");
     }
 
@@ -68,6 +68,8 @@ class BookSalesChart{
                 }
             }
         }
+        d3.select("#yeartitle").text(d.year);
+        d3.select("#yearinfobox").text(infobox.filter(da=>da.year === d.year)[0].script);
     }
 
     deselectValue(d){

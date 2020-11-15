@@ -13,10 +13,10 @@ class StoresChart{
         let xAxis = d3.axisBottom(xScale).tickFormat(function(d){
             return d;
         });
-        let x = g.append("g").attr("class", "axis").attr("transform", "translate(15,720)").call(xAxis);
+        let x = g.append("g").attr("class", "axis").attr("transform", "translate(15,620)").call(xAxis);
         x.append("text").attr("class", "axislabel").attr("x", 525).attr("y", 55).text("Year");
 
-        let yScale = d3.scaleLinear().domain([0,2600]).range([670,5]);
+        let yScale = d3.scaleLinear().domain([0,2600]).range([570,5]);
         let yAxis = d3.axisLeft(yScale).tickFormat(function(d){
             return d;
         });
@@ -43,19 +43,19 @@ class StoresChart{
             .on('mouseover', this.highlightValue)
             .on('mouseout', this.deselectValue);
 
-        g.append("line").attr('x1', 450).attr('x2', 500).attr('y1', 370).attr('y2', 370)
+        g.append("line").attr('x1', 450).attr('x2', 500).attr('y1', 320).attr('y2', 320)
             .attr('class', 'indcom');
-        g.append("text").attr('x', 505).attr('y',380).text("Independent Bookstore Companies")
+        g.append("text").attr('x', 505).attr('y',330).text("Independent Bookstore Companies")
             .attr("class", "legend");
             
-        g.append("line").attr('x1', 450).attr('x2', 500).attr('y1', 420).attr('y2', 420)
+        g.append("line").attr('x1', 450).attr('x2', 500).attr('y1', 370).attr('y2', 370)
             .attr('class', 'indloc');
-        g.append("text").attr('x', 505).attr('y',430).text("Independent Bookstores")
+        g.append("text").attr('x', 505).attr('y',380).text("Independent Bookstores")
             .attr("class", "legend");
 
-        g.append("line").attr('x1', 450).attr('x2', 500).attr('y1', 470).attr('y2', 470)
+        g.append("line").attr('x1', 450).attr('x2', 500).attr('y1', 420).attr('y2', 420)
             .attr('class', 'bn');
-        g.append("text").attr('x', 505).attr('y',478).text("Barnes and Noble Stores")
+        g.append("text").attr('x', 505).attr('y',430).text("Barnes and Noble Stores")
             .attr("class", "legend");
     }
 
@@ -74,6 +74,8 @@ class StoresChart{
                 }
             }
         }
+        d3.select("#yeartitle").text(d.year);
+        d3.select("#yearinfobox").text(infobox.filter(da=>da.year === d.year)[0].script);
     }
 
     deselectValue(d){
