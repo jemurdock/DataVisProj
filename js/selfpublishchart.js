@@ -6,8 +6,8 @@ class SelfPublishChart {
 
     drawChart() {
         let g = d3.select("#pub");
-        g.append("text").attr("class", "graphtitle").attr("x", 170).attr("y", 50)
-            .text("Number of Self-Published Books Through Different Platforms")
+        g.append("text").attr("class", "graphtitle").attr("x", 160).attr("y", 50)
+            .text("Self-Published Books Using Different Platforms")
 
         let xScale = d3.scaleLinear().domain([2010, 2018]).range([70, 840]);
         let xAxis = d3.axisBottom(xScale).ticks(9).tickFormat(function(d) {
@@ -37,6 +37,14 @@ class SelfPublishChart {
             .attr("d", lineGenerator(this.data.filter(d => d.publisher === "BLURB")));
         let clineChart = g.append("path").attr("class", "createspace")
             .attr("d", lineGenerator(this.data.filter(d => d.publisher === "CREATESPACE")));
+        g.selectAll('circle').data(this.data).join("circle")
+            .attr("class", d => d.publisher.toLowerCase())
+            .attr('r', 6)
+            .attr("id", d=> d.publisher.toLowerCase()+""+d.year)
+            .attr('cx', d=>xScale(d.year)+15)
+            .attr('cy', d=>yScale(d.published)+50)
+            .on('mouseover', this.highlightValue)
+            .on('mouseout', this.deselectValue);
 
         g.append("line").attr('x1', 500).attr('x2', 550).attr('y1', 500).attr('y2', 500)
             .attr('class', 'xlibris');
@@ -52,5 +60,27 @@ class SelfPublishChart {
             .attr('class', 'createspace');
         g.append("text").attr('x', 555).attr('y', 608).text("Published using Createspace")
             .attr("class", "legend");
+    }
+
+    highlightValue(d){
+        d3.select("#indloc"+d.year).transition().duration(500).attr('r', 20).attr('stroke-width', '3px');
+        d3.select("#indcom"+d.year).transition().duration(500).attr('r', 20).attr('stroke-width', '3px');
+        d3.select("#bn"+d.year).transition().duration(500).attr('r', 20).attr('stroke-width', '3px');
+        d3.select("#bookstores"+d.year).transition().duration(500).attr('r', 20).attr('stroke-width', '3px');
+        d3.select("#ecommerce"+d.year).transition().duration(500).attr('r', 20).attr('stroke-width', '3px');
+        d3.select("#xlibris"+d.year).transition().duration(500).attr('r', 20).attr('stroke-width', '3px');
+        d3.select("#blurb"+d.year).transition().duration(500).attr('r', 20).attr('stroke-width', '3px');
+        d3.select("#createspace"+d.year).transition().duration(500).attr('r', 20).attr('stroke-width', '3px');
+    }
+
+    deselectValue(d){
+        d3.select("#indloc"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
+        d3.select("#indcom"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
+        d3.select("#bn"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
+        d3.select("#bookstores"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
+        d3.select("#ecommerce"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
+        d3.select("#xlibris"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
+        d3.select("#blurb"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
+        d3.select("#createspace"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');      
     }
 }
