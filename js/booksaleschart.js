@@ -6,14 +6,14 @@ class BookSalesChart{
 
     drawChart(){
         let g = d3.select("#bsales");
-        g.append("text").attr("class", "graphtitle").attr("x", 300).attr("y", 50)
+        g.append("text").attr("class", "graphtitle").attr("x", 200).attr("y", 50)
             .text("USA Yearly Book Sales in Stores & Through E-Commerce")
-        let xScale = d3.scaleLinear().domain([1992,2018]).range([70,1040]);
+        let xScale = d3.scaleLinear().domain([1992,2018]).range([70,900]);
         let xAxis = d3.axisBottom(xScale).ticks(13).tickFormat(function(d){
             return d;
         });
         let x = g.append("g").attr("class", "axis").attr("transform", "translate(15,620)").call(xAxis);
-        x.append("text").attr("class", "axislabel").attr("x", 525).attr("y", 55).text("Year");
+        x.append("text").attr("class", "axislabel").attr("x", 455).attr("y", 55).text("Year");
 
         let yScale = d3.scaleLinear().domain([0,18500]).range([570,5]);
         let yAxis = d3.axisLeft(yScale).tickFormat(function(d){
@@ -24,7 +24,7 @@ class BookSalesChart{
         });
         let y = g.append("g").attr("class", "axis").attr("transform", "translate(85,50)").call(yAxis);
         y.append("text").attr("class", "axislabel")
-            .attr("transform", "translate(-60,170) rotate(270)")
+            .attr("transform", "translate(-60,130) rotate(270)")
             .text("Book Sales (In Millions of Dollars)");
 
         let lineGenerator = d3.line()
@@ -43,13 +43,13 @@ class BookSalesChart{
             .on('mouseover', this.highlightValue)
             .on('mouseout', this.deselectValue);
 
-        g.append("line").attr('x1', 790).attr('x2', 840).attr('y1', 450).attr('y2', 450)
+        g.append("line").attr('x1', 660).attr('x2', 710).attr('y1', 545).attr('y2', 545)
             .attr('class', 'bookstores');
-        g.append("text").attr('x', 845).attr('y',460).text("Physical Bookstores")
+        g.append("text").attr('x', 715).attr('y',555).text("Physical Bookstores")
             .attr("class", "legend");
-        g.append("line").attr('x1', 790).attr('x2', 840).attr('y1', 500).attr('y2', 500)
+        g.append("line").attr('x1', 660).attr('x2', 710).attr('y1', 580).attr('y2', 580)
             .attr('class', 'ecommerce');
-        g.append("text").attr('x', 845).attr('y',508).text("E-Commerce")
+        g.append("text").attr('x', 715).attr('y',588).text("E-Commerce")
             .attr("class", "legend");
     }
 

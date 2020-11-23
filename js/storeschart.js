@@ -22,8 +22,8 @@ class StoresChart{
         });
         let y = g.append("g").attr("class", "axis").attr("transform", "translate(85,50)").call(yAxis);
         y.append("text").attr("class", "axislabel")
-            .attr("transform", "translate(-65,190) rotate(270)")
-            .text("Count (In the Hundreds)");
+            .attr("transform", "translate(-65,230) rotate(270)")
+            .text("Count");
 
         let lineGenerator = d3.line()
             .x(d => xScale(d.year)+15)
@@ -43,9 +43,9 @@ class StoresChart{
             .on('mouseover', this.highlightValue)
             .on('mouseout', this.deselectValue);
 
-        g.append("line").attr('x1', 450).attr('x2', 500).attr('y1', 320).attr('y2', 320)
+        g.append("line").attr('x1', 450).attr('x2', 500).attr('y1', 330).attr('y2', 330)
             .attr('class', 'indcom');
-        g.append("text").attr('x', 505).attr('y',330).text("Independent Bookstore Companies")
+        g.append("text").attr('x', 505).attr('y',340).text("Independent Bookstore Companies")
             .attr("class", "legend");
             
         g.append("line").attr('x1', 450).attr('x2', 500).attr('y1', 370).attr('y2', 370)
@@ -53,9 +53,9 @@ class StoresChart{
         g.append("text").attr('x', 505).attr('y',380).text("Independent Bookstores")
             .attr("class", "legend");
 
-        g.append("line").attr('x1', 450).attr('x2', 500).attr('y1', 420).attr('y2', 420)
+        g.append("line").attr('x1', 450).attr('x2', 500).attr('y1', 410).attr('y2', 410)
             .attr('class', 'bn');
-        g.append("text").attr('x', 505).attr('y',430).text("Barnes and Noble Stores")
+        g.append("text").attr('x', 505).attr('y',420).text("Barnes and Noble Stores")
             .attr("class", "legend");
     }
 

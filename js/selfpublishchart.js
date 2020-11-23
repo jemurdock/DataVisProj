@@ -46,9 +46,9 @@ class SelfPublishChart {
             .on('mouseover', this.highlightValue)
             .on('mouseout', this.deselectValue);
 
-        g.append("line").attr('x1', 500).attr('x2', 550).attr('y1', 500).attr('y2', 500)
+        g.append("line").attr('x1', 500).attr('x2', 550).attr('y1', 510).attr('y2', 510)
             .attr('class', 'xlibris');
-        g.append("text").attr('x', 555).attr('y', 510).text("Published using Xlibris")
+        g.append("text").attr('x', 555).attr('y', 520).text("Published using Xlibris")
             .attr("class", "legend");
 
         g.append("line").attr('x1', 500).attr('x2', 550).attr('y1', 550).attr('y2', 550)
@@ -56,9 +56,9 @@ class SelfPublishChart {
         g.append("text").attr('x', 555).attr('y', 560).text("Published using Blurb")
             .attr("class", "legend");
 
-        g.append("line").attr('x1', 500).attr('x2', 550).attr('y1', 600).attr('y2', 600)
+        g.append("line").attr('x1', 500).attr('x2', 550).attr('y1', 590).attr('y2', 590)
             .attr('class', 'createspace');
-        g.append("text").attr('x', 555).attr('y', 608).text("Published using Createspace")
+        g.append("text").attr('x', 555).attr('y', 598).text("Published using Createspace")
             .attr("class", "legend");
     }
 
