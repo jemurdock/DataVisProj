@@ -33,12 +33,14 @@ svg {
     margin-bottom: 0px;
     padding-left: 50px;
     padding-right: 50px;
-    padding-bottom: 5px;
+    padding-bottom: 20px;
     padding-top: 15px;
 }
 .yearinfo {
     float: left;
     width: 33.33%;
+    height: 350px;
+    text-indent: 50px;
     color: white;
     background-color: rgb(88, 88, 88);
     font-size: 24px;

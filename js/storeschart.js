@@ -9,7 +9,7 @@ class StoresChart{
         g.append("text").attr("class", "graphtitle").attr("x", 170).attr("y", 50)
             .text("Number of Bookstores in the U.S.")
 
-        let xScale = d3.scaleLinear().domain([2005,2020]).range([70,640]);
+        let xScale = d3.scaleLinear().domain([2005,2020]).range([70,690]);
         let xAxis = d3.axisBottom(xScale).tickFormat(function(d){
             return d;
         });

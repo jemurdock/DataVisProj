@@ -9,7 +9,7 @@ class SelfPublishChart {
         g.append("text").attr("class", "graphtitle").attr("x", 150).attr("y", 50)
             .text("*Self-Published Books By Platform")
 
-        let xScale = d3.scaleLinear().domain([2010, 2018]).range([70, 640]);
+        let xScale = d3.scaleLinear().domain([2010, 2018]).range([70, 660]);
         let xAxis = d3.axisBottom(xScale).ticks(9).tickFormat(function(d) {
             return d;
         });

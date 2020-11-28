@@ -8,7 +8,7 @@ class BookSalesChart{
         let g = d3.select("#bsales");
         g.append("text").attr("class", "graphtitle").attr("x", 150).attr("y", 50)
             .text("Book Sales in Stores & Through E-Commerce")
-        let xScale = d3.scaleLinear().domain([1992,2018]).range([70,670]);
+        let xScale = d3.scaleLinear().domain([1992,2018]).range([70,690]);
         let xAxis = d3.axisBottom(xScale).ticks(13).tickFormat(function(d){
             return d;
         });
