@@ -73,7 +73,7 @@ class SelfPublishChart {
 
     highlightValue(d){
         d3.select(this).transition().duration(300).attr('r', 20).attr('stroke-width', '3px');
-
+        d3.select("#t"+d.year).transition().duration(300).attr('r', 20).attr('stroke-width', '3px');
         d3.select("#indloc"+d.year).transition().duration(300).attr('r', 15).attr('stroke-width', '3px');
         d3.select("#indcom"+d.year).transition().duration(300).attr('r', 15).attr('stroke-width', '3px');
         d3.select("#bn"+d.year).transition().duration(300).attr('r', 15).attr('stroke-width', '3px');
@@ -92,6 +92,7 @@ class SelfPublishChart {
     }
 
     deselectValue(d){
+        d3.select("#t"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
         d3.select("#indloc"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
         d3.select("#indcom"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
         d3.select("#bn"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');

@@ -3,11 +3,14 @@ let pubsales;
 let selfpub;
 let numstores;
 let readers;
+let timeline;
 let torusoverview;
 var infobox = [];
 
 d3.csv('./cleanData/YearInfo.csv').then(function(data) {
     infobox = data;
+    timeline = new Timeline(infobox);
+    timeline.drawChart();
 });
 
 d3.csv('./cleanData/BookSales.csv').then(function(data) {

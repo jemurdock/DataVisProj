@@ -55,6 +55,7 @@ class BookSalesChart{
 
     highlightValue(d){
         d3.select(this).transition().duration(300).attr('r', 20).attr('stroke-width', '3px');
+        d3.select("#t"+d.year).transition().duration(300).attr('r', 20).attr('stroke-width', '3px');
         if(d.type != "bookstores")
             d3.select("#bookstores"+d.year).transition().duration(300).attr('r', 15).attr('stroke-width', '3px');
         else
@@ -78,6 +79,7 @@ class BookSalesChart{
     }
 
     deselectValue(d){
+        d3.select("#t"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
         d3.select("#bookstores"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
         d3.select("#ecommerce"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
         if(d.year > 2004){
