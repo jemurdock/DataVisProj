@@ -31,44 +31,28 @@
             </ul>
         </div>
     </nav>
-
     <div id="booksales">
+        <p class="story">
+        In the last 20 years, the market for books has changed dramatically. With the rise of the internet and the increased convenience of shopping online, even retail giants have struggled to compete, especially after Amazon entered the scene. For bookstore owners, however, there is a second difficulty: books are now available as e-books and audiobooks, which are sometimes more accessible, affordable, or simply preferrable.
+        </p>
+        <p class="story">
+        There has been plenty of speculation as to how deeply e-books and audiobooks have cut into the sales of print books, how much Amazon has dominated the bookselling scene, and how authors have been affected, whether positively or negatively. There are theories as to why Barnes and Noble has managed to survive when no other bookstore chain in the United States has, and how much longer it will last. With so many factors influencing the market for books, it can be hard to see the full picture. This is what some of those factors look like.
+        </p>
         <svg id="boosvg">
-                <g transform="translate(5,5)" id="bstory">
-                    <rect width='1880' height='390' fill='orange'></rect>
-                </g>
-                <g transform="translate(15,400)" id="bsales">
-                </g>
-                <g transform="translate(990,400)" id="numstores">
-                </g>
-            </svg>
+            <g transform="translate(0,0)" id="pub" width="33.33%">
+            </g>
+            <g transform="translate(685,0)" id="bsales" width="33.33%">
+            </g>
+            <g transform="translate(1400,0)" id="numstores" width="33.33%">
+            </g>
+        </svg>  
+        <p class="story" id="yeartitle">Hover over a point to read more!</p>
+        <p class="yearinfo" id="pstory"></p> 
+        <p class="yearinfo" id="bstory"></p>  
+        <p class="yearinfo" id="nstory"></p>  
     </div>
-    <div id="publishing">
-        <svg id="pubsvg">
-                <g transform="translate(15,0)" id="yearstory">
-                    <text id="yeartitle" transform="translate(50,70)">Hover Over a Point to See More!</text>
-                    <text id="yearinfobox" transform="translate(50,120)"></text>
-                </g>
-                <g transform="translate(990,0)" id="pub">
-                </g>
-            </svg>
-    </div>
-    <!-- <div id="libraries">
-        <svg id="libsvg">
-                <g transform="translate(5,5)" id="libstory">
-                    <rect width='805' height='795' fill='darkorchid'></rect>
-                </g>
-                <g transform="translate(820,5)" id="libmap">
-                    <rect width='1365' height='795' fill='indigo'></rect>
-                </g>
-            </svg>
-    </div> -->
     <div id="closing">
-        <svg id="closvg">
-                <g transform="translate(5,5)" id="close">
-                    <rect width='2180' height='395' fill='grey'></rect>
-                </g>
-            </svg>
+        <p class="story"></p>
     </div>
     <script src="js/booksaleschart.js"></script>
     <script src="js/librarieschart.js"></script>
