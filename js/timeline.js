@@ -20,23 +20,27 @@ class Timeline{
             .text(d=>d.year);
     }
 
+    highlightYears(){
+
+    }
+
     highlightValue(d){
         d3.select(this).transition().duration(300).attr('r', 20).attr('stroke-width', '3px');
-        if(d.year < 2019){
+        if(d.year <= 2018){ 
             d3.select("#bookstores"+d.year).transition().duration(300).attr('r', 15).attr('stroke-width', '3px');
             d3.select("#ecommerce"+d.year).transition().duration(300).attr('r', 15).attr('stroke-width', '3px');
         }
-        if(d.year > 2004){
+        if(d.year >= 2005){
             d3.select("#bn"+d.year).transition().duration(300).attr('r', 15).attr('stroke-width', '3px');
-            if(d.year > 2008){
+            if(d.year >= 2009 && d.year <= 2019){
                 d3.select("#indloc"+d.year).transition().duration(300).attr('r', 15).attr('stroke-width', '3px');
                 d3.select("#indcom"+d.year).transition().duration(300).attr('r', 15).attr('stroke-width', '3px');
-                if(d.year > 2009 && d.year < 2019){
-                    d3.select("#xlibris"+d.year).transition().duration(300).attr('r', 15).attr('stroke-width', '3px');
-                    d3.select("#blurb"+d.year).transition().duration(300).attr('r', 15).attr('stroke-width', '3px');
-                    d3.select("#createspace"+d.year).transition().duration(300).attr('r', 15).attr('stroke-width', '3px');
-                }
             }
+        }
+        if(d.year >= 2010 && d.year <= 2018){
+            d3.select("#xlibris"+d.year).transition().duration(300).attr('r', 15).attr('stroke-width', '3px');
+            d3.select("#blurb"+d.year).transition().duration(300).attr('r', 15).attr('stroke-width', '3px');
+            d3.select("#createspace"+d.year).transition().duration(300).attr('r', 15).attr('stroke-width', '3px');
         }
 
         d3.select("#yeartitle").text(d.year);
@@ -47,21 +51,21 @@ class Timeline{
 
     deselectValue(d){
         d3.select(this).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
-        if(d.year < 2019){
+        if(d.year <= 2018){ 
             d3.select("#bookstores"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
             d3.select("#ecommerce"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
         }
-        if(d.year > 2004){
+        if(d.year >= 2005){
             d3.select("#bn"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
-            if(d.year > 2008){
+            if(d.year >= 2009 && d.year <= 2019){
                 d3.select("#indloc"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
                 d3.select("#indcom"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
-                if(d.year > 2009 && d.year < 2019){
-                    d3.select("#xlibris"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
-                    d3.select("#blurb"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
-                    d3.select("#createspace"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
-                }
             }
+        }
+        if(d.year >= 2010 && d.year <= 2018){
+            d3.select("#xlibris"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
+            d3.select("#blurb"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
+            d3.select("#createspace"+d.year).transition().duration(500).attr('r', 6).attr('stroke-width', '1px');
         }
     }
 }
