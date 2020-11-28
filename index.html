@@ -1,1 +1,70 @@
-<h1>Zoinks!</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="https://d3js.org/d3-array.v2.min.js"></script>
+    <script src="https://d3js.org/d3-force.v2.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" />
+    <h1>The Influence of the Digital Age on the Book Market</h1>
+    <h3>created by Michael Gardone and Jessica Murdock</h4>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="proj.html">The Book</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="proj.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="readers.html">Reader Breakdown</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sources.html">Sources</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="booksales">
+        <p class="story">
+        In the last 20 years, the market for books has changed dramatically. With the rise of the internet and the increased convenience of shopping online, even retail giants have struggled to compete, especially after Amazon entered the scene. For bookstore owners, however, there is a second difficulty: books are now available as e-books and audiobooks, which are sometimes more accessible, affordable, or simply preferrable.
+        </p>
+        <p class="story">
+        There has been plenty of speculation as to how deeply e-books and audiobooks have cut into the sales of print books, how much Amazon has dominated the bookselling scene, and how authors have been affected, whether positively or negatively. There are theories as to why Barnes and Noble has managed to survive when no other bookstore chain in the United States has, and how much longer it will last. With so many factors influencing the market for books, it can be hard to see the full picture. This is what some of those factors look like.
+        </p>
+        <svg id="boosvg">
+            <g transform="translate(0,0)" id="pub" width="33.33%">
+            </g>
+            <g transform="translate(695,0)" id="bsales" width="33.33%">
+            </g>
+            <g transform="translate(1430,0)" id="numstores" width="33.33%">
+            </g>
+        </svg>  
+        <svg id="yearaxis">
+            <g id="timeline"></g>
+        </svg>
+        <p id="yeartitle">Hover over a point to read more!</p>
+        <p class="yearinfo" id="pstory"></p> 
+        <p class="yearinfo" id="bstory"></p>  
+        <p class="yearinfo" id="nstory"></p>  
+    </div>
+    <div id="closing">
+        <p class="story"></p>
+    </div>
+    <script src="js/booksaleschart.js"></script>
+    <script src="js/timeline.js"></script>
+    <script src="js/publishingchart.js"></script>
+    <script src="js/selfpublishchart.js"></script>
+    <script src="js/storeschart.js"></script>
+    <script src="js/piechart.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
