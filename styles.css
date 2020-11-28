@@ -9,6 +9,7 @@ div {
 /* Home Page Styling */
 /* --- containers ---*/
 svg {
+    width: 2100px;
     padding: 5px;
     display: inline-block;
 }
