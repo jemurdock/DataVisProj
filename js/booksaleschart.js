@@ -64,24 +64,38 @@ class BookSalesChart{
         g.append("text").attr("x", xScale(1995)+10).attr("y", 405)
             .attr("class", "annotation").text("Amazon launches");
 
-        g.append("line").attr("x1", xScale(2007)+15).attr("x2", xScale(2007)+15)
-            .attr("class", "annotation").attr("y1", 450).attr("y2", 525);
-        g.append("text").attr("x", xScale(2007)-40).attr("y", 425)
-            .attr("class", "annotation").text("Amazon releases");
-        g.append("text").attr("x", xScale(2007)-5).attr("y", 445)
-            .attr("class", "annotation").text("Kindle");
+        g.append("line").attr("x1", xScale(1997)+15).attr("x2", xScale(1997)+15)
+            .attr("class", "annotation").attr("y1", 280).attr("y2", 325);
+        g.append("text").attr("x", xScale(1997)+10).attr("y", 345)
+            .attr("class", "annotation").text("BarnesandNoble.com");
+        g.append("text").attr("x", xScale(1997)+10).attr("y", 365)
+            .attr("class", "annotation").text("launches");
+
+        // g.append("line").attr("x1", xScale(2007)+15).attr("x2", xScale(2007)+15)
+        //     .attr("class", "annotation").attr("y1", 450).attr("y2", 525);
+        // g.append("text").attr("x", xScale(2007)-40).attr("y", 425)
+        //     .attr("class", "annotation").text("Amazon releases");
+        // g.append("text").attr("x", xScale(2007)-5).attr("y", 445)
+        //     .attr("class", "annotation").text("Kindle");
 
         g.append("line").attr("x1", xScale(2008)+15).attr("x2", xScale(2008)+15)
             .attr("class", "annotation").attr("y1", 540).attr("y2", 590);
         g.append("text").attr("x", xScale(2008)).attr("y", 605)
             .attr("class", "annotation").text("Amazon buys Audible");
 
-        g.append("line").attr("x1", xScale(2015)+15).attr("x2", xScale(2015)+15)
-            .attr("class", "annotation").attr("y1", 340).attr("y2", 390);
-        g.append("text").attr("x", xScale(2015)-40).attr("y", 410)
-            .attr("class", "annotation").text("Amazon opens");
-        g.append("text").attr("x", xScale(2015)-40).attr("y", 430)
-            .attr("class", "annotation").text("first bookstore");
+        // g.append("line").attr("x1", xScale(2015)+15).attr("x2", xScale(2015)+15)
+        //     .attr("class", "annotation").attr("y1", 340).attr("y2", 390);
+        // g.append("text").attr("x", xScale(2015)-40).attr("y", 410)
+        //     .attr("class", "annotation").text("Amazon opens");
+        // g.append("text").attr("x", xScale(2015)-40).attr("y", 430)
+        //     .attr("class", "annotation").text("first bookstore");
+
+        g.append("line").attr("x1", xScale(2008)+15).attr("x2", xScale(2008)+15)
+            .attr("class", "annotation").attr("y1", 130).attr("y2", 180);
+        g.append("text").attr("x", xScale(2008)-50).attr("y", 195)
+            .attr("class", "annotation").text("Borders.com");
+        g.append("text").attr("x", xScale(2008)-50).attr("y", 215)
+            .attr("class", "annotation").text("relaunches");
 
         g.append("line").attr("x1", xScale(2011)+15).attr("x2", xScale(2011)+15)
             .attr("class", "annotation").attr("y1", 220).attr("y2", 160);
