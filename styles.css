@@ -196,3 +196,11 @@ circle.createspace,circle.bn {
     font-size: 24px;
     margin-left: 85px;
 }
+
+#organization
+{
+    list-style:none;
+    display: inline-block;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}

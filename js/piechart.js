@@ -9,6 +9,7 @@ class PieChart {
 
         this.genderColors = ["#45aaf2", "#fc5c65"];
         this.ageColors = ["#fa8231", "#fed330", "#20bf6b", "#8854d0", "#4b6584"];
+        this.groupToRange = {"16 to 26": "group1", "27 to 37":"group2", "38 to 48":"group3", "49 to 59":"group4", "60 to 70":"group5", "71 to 93":"group6"};
 
         this.genderScale = d3.scaleOrdinal().domain(["male", "female"]).range(this.genderColors);
         this.ageScale = d3.scaleOrdinal().domain(["16 to 26", "27 to 37", "38 to 48", "60 to 70", "71 to 93"]).range(this.ageColors);

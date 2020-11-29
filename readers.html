@@ -35,12 +35,22 @@
     <table id="organizer">
         <tr>
             <td>
+                <form>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="indivProfiles" name="indivVsGrouped" class="custom-control-input" onclick="individualItems()" checked>
+                        <label class="custom-control-label" for="indivProfiles">Individual Profiles</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="groupedProfiles" name="indivVsGrouped" class="custom-control-input" onclick="groupItems()">
+                        <label class="custom-control-label" for="groupedProfiles">Grouped Profiles</label>
+                    </div>
+                </form>
                 <table id="table" class="table table-striped table-bordered wider" width="895px" transform="(0,5)">
                     <thead>
                         <tr>
                             <th>Age</th>
                             <th>Sex</th>
-                            <th>Avg. Number of Books</th>
+                            <th>Number of Books</th>
                             <th>Print Books</th>
                             <th>Audio Books</th>
                             <th>E-Books</th>
@@ -50,23 +60,23 @@
             </td>
             <td id="align-top">
                 <div class="custom-control custom-radio">
-                    <input type="radio" id="Male-Female" name="customRadio" class="custom-control-input" checked>
+                    <input type="radio" id="Male-Female" name="customRadio" class="custom-control-input" checked onclick="updateSex()">
                     <label class="custom-control-label" for="Male-Female">Gender Comparison</label>
                 </div>
                 <div class="custom-control custom-radio">
-                    <input type="radio" id="Age" name="customRadio" class="custom-control-input" disabled>
+                    <input type="radio" id="Age" name="customRadio" class="custom-control-input" onclick="updateAge()">
                     <label class="custom-control-label" for="Age" disabled>Age Comparison</label>
                 </div>
                 <div class="custom-control custom-radio">
-                    <input type="radio" id="Male-Age" name="customRadio" class="custom-control-input" disabled>
+                    <input type="radio" id="Male-Age" name="customRadio" class="custom-control-input" onclick="updateAge_Male()">
                     <label class="custom-control-label" for="Male-Age">Male-Age Comparison</label>
                 </div>
                 <div class="custom-control custom-radio">
-                    <input type="radio" id="Female-Age" name="customRadio" class="custom-control-input" disabled>
+                    <input type="radio" id="Female-Age" name="customRadio" class="custom-control-input" onclick="updateAge_Female()">
                     <label class="custom-control-label" for="Female-Age">Female-Age Comparison</label>
                 </div>
                 <div class="custom-control custom-radio">
-                    <input type="radio" id="Overall" name="customRadio" class="custom-control-input" disabled>
+                    <input type="radio" id="Overall" name="customRadio" class="custom-control-input" onclick="updateOverall()">
                     <label class="custom-control-label" for="Overall">Overall Book Comparison</label>
                 </div>
                 <div>
@@ -85,14 +95,10 @@
             </td>
         </tr>
     </table>
-    <script src="js/booksaleschart.js"></script>
-    <script src="js/librarieschart.js"></script>
-    <script src="js/publishingchart.js"></script>
-    <script src="js/selfpublishchart.js"></script>
-    <script src="js/storeschart.js"></script>
+    
     <script src="js/piechart.js"></script>
     <script src="js/table.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script_reader.js"></script>
 </body>
 
 </html>
