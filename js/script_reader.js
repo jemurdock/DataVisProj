@@ -178,10 +178,9 @@ d3.csv('./cleanData/readerData/ReadersByCategory.csv').then(function(data) {
     }
 
     readers = new Table(uncomp, comp_MaleFemale, comp_MaleAge, comp_FemaleAge, comp_Age, comp_Overall);
-    readers.buildTable();
+    readers.minimizeTable();
 
-    // torusoverview = new PieChart(data);
-    // torusoverview.drawTorus();
+    torusoverview = new PieChart(comp_MaleFemale, comp_MaleAge, comp_FemaleAge, comp_Age, comp_Overall);
 });
 
 // Info Functions
@@ -198,33 +197,29 @@ function individualItems()
 function updateAge()
 {
     readers.ageSelected();
+    torusoverview.ageSelected();
 }
 
 function updateSex()
 {
     readers.genderSelected();
+    torusoverview.genderSelected();
 }
 
 function updateAge_Male()
 {
     readers.maleAgeSelected();
+    torusoverview.maleAgeSelected();
 }
 
 function updateAge_Female()
 {
     readers.femaleAgeSelected();
+    torusoverview.femaleAgeSelected();
 }
 
 function updateOverall()
 {
     readers.overallSelected();
-}
-
-// Draw Functions
-function displayTorus() {
-    torusoverview.drawTorus();
-}
-
-function displayBar() {
-    torusoverview.drawBars();
+    torusoverview.overallSelected();
 }

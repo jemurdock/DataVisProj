@@ -204,3 +204,22 @@ circle.createspace,circle.bn {
     flex-wrap: nowrap;
     flex-direction: row;
 }
+
+#vert-align
+{
+    vertical-align: top;
+}
+
+#spacer {
+    min-width:25px;
+}
+
+.scale text{
+    fill:black;
+}
+
+.center
+{
+    display:table-cell;
+    text-align:center;
+}
