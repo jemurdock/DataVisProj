@@ -1,4 +1,4 @@
-class PieChart {
+class ReaderGraph {
 
     constructor(comp_MaleFemale, comp_MaleAge, comp_FemaleAge, comp_Age, comp_Overall) {
         this.gender = true;

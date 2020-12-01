@@ -1,4 +1,4 @@
-let torusoverview;
+let readerGraph;
 let readers;
 
 // Male-Age comparison, don't worry about females
@@ -159,7 +159,6 @@ d3.csv('./cleanData/readerData/OverallBooks.csv').then(function(data)
         comp_Overall[0]["aud"] += +d["readaudio"];
         comp_Overall[0]["ebk"] += +d["readebook"];
     }
-    console.log(comp_Overall);
 });
 
 d3.csv('./cleanData/readerData/ReadersByCategory.csv').then(function(data) {
@@ -181,7 +180,7 @@ d3.csv('./cleanData/readerData/ReadersByCategory.csv').then(function(data) {
     readers = new Table(uncomp, comp_MaleFemale, comp_MaleAge, comp_FemaleAge, comp_Age, comp_Overall);
     readers.minimizeTable();
 
-    torusoverview = new PieChart(comp_MaleFemale, comp_MaleAge, comp_FemaleAge, comp_Age, comp_Overall);
+    readerGraph = new ReaderGraph(comp_MaleFemale, comp_MaleAge, comp_FemaleAge, comp_Age, comp_Overall);
 });
 
 // Info Functions
@@ -198,29 +197,29 @@ function individualItems()
 function updateAge()
 {
     readers.ageSelected();
-    torusoverview.ageSelected();
+    readerGraph.ageSelected();
 }
 
 function updateSex()
 {
     readers.genderSelected();
-    torusoverview.genderSelected();
+    readerGraph.genderSelected();
 }
 
 function updateAge_Male()
 {
     readers.maleAgeSelected();
-    torusoverview.maleAgeSelected();
+    readerGraph.maleAgeSelected();
 }
 
 function updateAge_Female()
 {
     readers.femaleAgeSelected();
-    torusoverview.femaleAgeSelected();
+    readerGraph.femaleAgeSelected();
 }
 
 function updateOverall()
 {
     readers.overallSelected();
-    torusoverview.overallSelected();
+    readerGraph.overallSelected();
 }
