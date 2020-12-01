@@ -162,7 +162,7 @@ class ReaderGraph {
 
         this.currData = data;
         
-        this.xScale.domain(["pnt", "aud", "ebk"]);
+        this.xScale.domain(["Print", "Audio", "E-Book"]);
         
         this.yScale.domain([0, d3.max([data[0]["pnt"], data[0]["aud"], data[0]["ebk"]])]);
 
