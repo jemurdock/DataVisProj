@@ -85,7 +85,7 @@ class ReaderGraph {
             .attr("width", 80 / data.length)
             .attr("height", function(d) { return 200 - that.yScale(d[1]); })
             .style("fill", function(d) { if (key === "sex") { return that.genderScale(d[0]); } else { return that.ageScale(d[0]) } })
-            .on("mouseover", function(d) { that.hover(d, this.genderTotal) } )
+            .on("mouseover", this.hover)
             .on("mouseout", this.normal);
         
         this.mainView.append("g").attr("class", "scale").attr("transform", "translate(0," + 200 + ")").call(d3.axisBottom(this.xScale));
