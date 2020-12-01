@@ -27,19 +27,3 @@ d3.csv('./cleanData/BookStores.csv').then(function(data) {
     numstores = new StoresChart(data);
     numstores.drawChart();
 });
-
-d3.csv('./cleanData/ReadersByCategory.csv').then(function(data) {
-    readers = new Table(data);
-    readers.buildTable();
-
-    torusoverview = new PieChart(data);
-    torusoverview.drawTorus();
-});
-
-function displayTorus() {
-    torusoverview.drawTorus();
-}
-
-function displayBar() {
-    torusoverview.drawBars();
-}
