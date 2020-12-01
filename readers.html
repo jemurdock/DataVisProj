@@ -32,82 +32,97 @@
         </div>
     </nav>
 
-    <table id="organizer">
-        <tr id="vert-align">
-            <td>
-                <table>
-                    <thead>
-                        <tr>
-                            <th class="center" colspan="2">
-                                Grouping in Table
-                            </th>
-                            <th id="spacer"> <!-- spacer --> </th>
-                            <th class="center" colspan="2">
-                                Data Showing
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="indivProfiles" name="indivVsGrouped" class="custom-control-input" onclick="individualItems()">
-                                    <label class="custom-control-label" for="indivProfiles">Individual Profiles</label>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="groupedProfiles" name="indivVsGrouped" class="custom-control-input" onclick="groupItems()" checked>
-                                    <label class="custom-control-label" for="groupedProfiles">Grouped Profiles</label>
-                                </div>
-                            </td>
-                            <td id="spacer"> <!-- Spacer --> </td>
-                            <td>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="Male-Female" name="customRadio" class="custom-control-input" checked onclick="updateSex()">
-                                    <label class="custom-control-label" for="Male-Female">Gender Comparison</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="Age" name="customRadio" class="custom-control-input" onclick="updateAge()">
-                                    <label class="custom-control-label" for="Age" disabled>Age Comparison</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="Male-Age" name="customRadio" class="custom-control-input" onclick="updateAge_Male()">
-                                    <label class="custom-control-label" for="Male-Age">Male-Age Comparison</label>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="Female-Age" name="customRadio" class="custom-control-input" onclick="updateAge_Female()">
-                                    <label class="custom-control-label" for="Female-Age">Female-Age Comparison</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="Overall" name="customRadio" class="custom-control-input" onclick="updateOverall()">
-                                    <label class="custom-control-label" for="Overall">Overall Book Comparison</label>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table id="table" class="table table-striped table-bordered wider" width="895px" transform="(0,5)">
-                    <thead>
-                        <tr>
-                            <th>Age</th>
-                            <th>Sex</th>
-                            <th>Number of Books</th>
-                            <th>Print Books</th>
-                            <th>Audio Books</th>
-                            <th>E-Books</th>
-                        </tr>
-                    </thead>
-                </table>
-            </td>
-            <td id="align-top">
-                <svg id="tabsvg">
-                    </svg>
-            </td>
-        </tr>
-    </table>
+    <div id="header">
+        <p>
+            The following information is from the Pew Research center, administered in early 2019 (Jan 8 to Feb 7). There were
+            a total of 1,502 respondents to a telephone-based interview.
+        </p>
+        <p>
+            "Print Books", "Audio Books", and "E-Books", when in the individual view, are measures for whether or not the individual
+            has read a book in that format in the previous 12 months of the survey (two or more indicates that a respondent had similar statistics).
+            In the group view, they represent the number of people who read a book in the given category. For example, 360 men have indicated that
+            they have read e-books over the course of the last 12 month period out of a total of 787 e-books readers across both genders.
+        </p>
+    </div>
+
+    <div class="reader-body">
+        <table id="organizer">
+            <tr id="vert-align">
+                <td>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="center" colspan="2">
+                                    Grouping in Table
+                                </th>
+                                <th id="spacer"> <!-- spacer --> </th>
+                                <th class="center" colspan="2">
+                                    Data Showing
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="indivProfiles" name="indivVsGrouped" class="custom-control-input" onclick="individualItems()">
+                                        <label class="custom-control-label" for="indivProfiles">Individual Profiles</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="groupedProfiles" name="indivVsGrouped" class="custom-control-input" onclick="groupItems()" checked>
+                                        <label class="custom-control-label" for="groupedProfiles">Grouped Profiles</label>
+                                    </div>
+                                </td>
+                                <td id="spacer"> <!-- Spacer --> </td>
+                                <td>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="Male-Female" name="customRadio" class="custom-control-input" checked onclick="updateSex()">
+                                        <label class="custom-control-label" for="Male-Female">Gender Comparison</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="Age" name="customRadio" class="custom-control-input" onclick="updateAge()">
+                                        <label class="custom-control-label" for="Age" disabled>Age Comparison</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="Male-Age" name="customRadio" class="custom-control-input" onclick="updateAge_Male()">
+                                        <label class="custom-control-label" for="Male-Age">Male-Age Comparison</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="Female-Age" name="customRadio" class="custom-control-input" onclick="updateAge_Female()">
+                                        <label class="custom-control-label" for="Female-Age">Female-Age Comparison</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="Overall" name="customRadio" class="custom-control-input" onclick="updateOverall()">
+                                        <label class="custom-control-label" for="Overall">Overall Book Comparison</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table id="table" class="table table-striped table-bordered wider" width="895px" transform="(0,5)">
+                        <thead>
+                            <tr>
+                                <th>Age</th>
+                                <th>Sex</th>
+                                <th>Number of Books</th>
+                                <th>Print Books</th>
+                                <th>Audio Books</th>
+                                <th>E-Books</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </td>
+                <td id="align-top">
+                    <svg id="tabsvg">
+                        </svg>
+                </td>
+            </tr>
+        </table>
+    </div>
     
     <script src="js/readergraphs.js"></script>
     <script src="js/table.js"></script>

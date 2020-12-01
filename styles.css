@@ -182,7 +182,7 @@ circle.createspace,circle.bn {
     position: absolute;
     text-align: center;
     width: 60px;
-    height: 28px;
+    height: 20px;
     padding: 2px;
     font: 12px sans-serif;
     background: lightsteelblue;
@@ -222,4 +222,33 @@ circle.createspace,circle.bn {
 {
     display:table-cell;
     text-align:center;
+}
+
+.reader-body
+{
+    margin-left:2.5%;
+}
+
+#header{
+    color: white;
+    background-color: #4b6584;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    padding-top: 15px;
+}
+
+#infoDeriv{
+    color: white;
+    background-color: #2d98da;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    padding-top: 15px;
 }

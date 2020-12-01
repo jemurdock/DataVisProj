@@ -5,6 +5,8 @@ class PieChart {
         this.age = false;
         this.overall = false;
 
+        this.genderTotal = comp_MaleFemale[0]["avg"] + comp_MaleFemale[1]["avg"];
+
         this.comp_MaleFemale = comp_MaleFemale;
 
         this.comp_MaleAge = comp_MaleAge;
@@ -19,7 +21,7 @@ class PieChart {
         this.overallColors = ["#20bf6b", "#fed330", "#45aaf2"];
         this.genderScale = d3.scaleOrdinal().domain(["Female", "Male"]).range(this.genderColors);
         this.ageScale = d3.scaleOrdinal().domain(["16 to 26", "27 to 37", "38 to 48", "49 to 59", "60 to 70", "71 to 93"]).range(this.ageColors);
-        this.overallScale = d3.scaleOrdinal().domain(["pnt", "ebk", "aud"]).range(this.ageColors);
+        this.overallScale = d3.scaleOrdinal().domain(["Print", "E-Book", "Audio"]).range(this.overallColors);
 
         this.svg = d3.select("#tabsvg");
         
@@ -82,7 +84,9 @@ class PieChart {
             .attr("y", function(d) { return that.yScale(d[1]); })
             .attr("width", 80 / data.length)
             .attr("height", function(d) { return 200 - that.yScale(d[1]); })
-            .style("fill", function(d) { if (key === "sex") { return that.genderScale(d[0]); } else { return that.ageScale(d[0]) } });
+            .style("fill", function(d) { if (key === "sex") { return that.genderScale(d[0]); } else { return that.ageScale(d[0]) } })
+            .on("mouseover", function(d) { that.hover(d, this.genderTotal) } )
+            .on("mouseout", this.normal);
         
         this.mainView.append("g").attr("class", "scale").attr("transform", "translate(0," + 200 + ")").call(d3.axisBottom(this.xScale));
         this.mainView.append("g").attr("class", "scale").call(d3.axisLeft(this.yScale));
@@ -96,7 +100,9 @@ class PieChart {
             .attr("y", function(d) { return that.yScale(d[1]); })
             .attr("width", 80 / data.length)
             .attr("height", function(d) { return 200 - that.yScale(d[1]); })
-            .style("fill", function(d) { if (key === "sex") { return that.genderScale(d[0]); } else { return that.ageScale(d[0]) } });
+            .style("fill", function(d) { if (key === "sex") { return that.genderScale(d[0]); } else { return that.ageScale(d[0]) } })
+            .on("mouseover", this.hover)
+            .on("mouseout", this.normal);
     
         this.printView.append("g").attr("class", "scale").attr("transform", "translate(0," + 200 + ")").call(d3.axisBottom(this.xScale));
         this.printView.append("g").attr("class", "scale").call(d3.axisLeft(this.yScale));
@@ -110,7 +116,9 @@ class PieChart {
             .attr("y", function(d) { return that.yScale(d[1]); })
             .attr("width", 80 / data.length)
             .attr("height", function(d) { return 200 - that.yScale(d[1]); })
-            .style("fill", function(d) { if (key === "sex") { return that.genderScale(d[0]); } else { return that.ageScale(d[0]) } });
+            .style("fill", function(d) { if (key === "sex") { return that.genderScale(d[0]); } else { return that.ageScale(d[0]) } })
+            .on("mouseover", this.hover)
+            .on("mouseout", this.normal);
     
         this.audioView.append("g").attr("class", "scale").attr("transform", "translate(0," + 200 + ")").call(d3.axisBottom(this.xScale));
         this.audioView.append("g").attr("class", "scale").call(d3.axisLeft(this.yScale));
@@ -125,7 +133,9 @@ class PieChart {
             .attr("y", function(d) { return that.yScale(d[1]); })
             .attr("width", 80 / data.length)
             .attr("height", function(d) { return 200 - that.yScale(d[1]); })
-            .style("fill", function(d) { if (key === "sex") { return that.genderScale(d[0]); } else { return that.ageScale(d[0]) } });
+            .style("fill", function(d) { if (key === "sex") { return that.genderScale(d[0]); } else { return that.ageScale(d[0]) } })
+            .on("mouseover", this.hover)
+            .on("mouseout", this.normal);
     
         this.ebookView.append("g").attr("class", "scale").attr("transform", "translate(0," + 200 + ")").call(d3.axisBottom(this.xScale));
         this.ebookView.append("g").attr("class", "scale").call(d3.axisLeft(this.yScale));
@@ -157,13 +167,15 @@ class PieChart {
         this.yScale.domain([0, d3.max([data[0]["pnt"], data[0]["aud"], data[0]["ebk"]])]);
 
         this.mainView.append("text").text("Overall").attr("transform", "translate(100,0)").style("fill", "black").style("font-weight", "bold");
-        this.mainView.selectAll(".bar").data([["pnt", data[0]["pnt"]], ["ebk", data[0]["ebk"]], ["aud", data[0]["aud"]]])
+        this.mainView.selectAll(".bar").data([["Print", data[0]["pnt"]], ["E-Book", data[0]["ebk"]], ["Audio", data[0]["aud"]]])
             .enter().append("rect")
             .attr("x", function(d) { return that.xScale(d[0]); })
             .attr("y", function(d) { return that.yScale(d[1]); })
             .attr("width", 80 / data.length)
             .attr("height", function(d) { return 200 - that.yScale(d[1]); })
-            .style("fill", function(d) { return that.overallScale(d[0]); });
+            .style("fill", function(d) { return that.overallScale(d[0]); })
+            .on("mouseover", this.hover)
+            .on("mouseout", this.normal);
     
         this.mainView.append("g").attr("class", "scale").attr("transform", "translate(0," + 200 + ")").call(d3.axisBottom(this.xScale));
         this.mainView.append("g").attr("class", "scale").call(d3.axisLeft(this.yScale));
@@ -211,7 +223,7 @@ class PieChart {
 
     hover(d) {
         d3.select(".tooltip").transition().duration(200).style("opacity", 0.9);
-        d3.select(".tooltip").html(d.value + "<br/>" + (d.value / this.genderTotal)).style("left", (d3.event.pageX) + "px")
+        d3.select(".tooltip").html(d[1]).style("left", (d3.event.pageX) + "px")
             .style("top", (d3.event.pageY - 28) + "px");
     }
 

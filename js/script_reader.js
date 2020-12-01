@@ -151,7 +151,7 @@ d3.csv('./cleanData/readerData/FemaleAge_Comparison.csv').then(function(data)
     }
 });
 
-d3.csv('./cleanData/readerData/FemaleAge_Comparison.csv').then(function(data)
+d3.csv('./cleanData/readerData/OverallBooks.csv').then(function(data)
 {
     for(let d of data)
     {
@@ -159,6 +159,7 @@ d3.csv('./cleanData/readerData/FemaleAge_Comparison.csv').then(function(data)
         comp_Overall[0]["aud"] += +d["readaudio"];
         comp_Overall[0]["ebk"] += +d["readebook"];
     }
+    console.log(comp_Overall);
 });
 
 d3.csv('./cleanData/readerData/ReadersByCategory.csv').then(function(data) {
